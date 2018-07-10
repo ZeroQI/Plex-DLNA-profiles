@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<Clients> <!-- to remove ? --> 
+   <!-- Samsung SMT-G7400 DLNA Test Certificate: http://certification.dlna.org/certs/REG47816707.pdf --> 
+   <!—Original Author: Rense VanderHoek, https://gist.github.com/rense/3990611 --> 
+   <!—Modifications:    ZeroQI: ProtocolInfo --> 
+
+   <!-- 1. Name: how Plex Media Server refers to the profile. Must be identical to the profile's file name. --> 
+   <Client name="UPC Horizon"> 
+
+      <!-- 2. Identification: how Plex Media Server recognizes a device, given an incoming HTTP request. --> 
+      <Identification> 
+         <Header name="User-Agent" substring="Linux/2.6.35 UPnP/1.0 NDS_MHF DLNADOC/1.50"/> 
+
+         <!--4. Device Description: how Plex Media Server identifies itself to other devices during DLNA network discovery. -->
+         <DeviceDescription type="urn:schemas-upnp-org:device:MediaServer:1"> 
+            <FriendlyName substring="UPC Horizon"/> 
+            <ModelName substring="UPC Horizon"/> 
+            <ModelNumber substring="1.0"/> 
+            <ModelUrl substring="http://www.xbmc.org/"/> 
+            <ModelDescription substring="UPC Hzn SuperCDS"/> 
+            <Manufacturer substring="Team XBMC"/> 
+            <ManufacturerUrl substring="http://www.xbmc.org/"/> 
+         </DeviceDescription> 
+      </Identification> 
+
+      <!-- 3. Protocol Info: how Plex Media Server reports its own DLNA protocol support to devices. --> 
+      <!--     Use intel Device spy [http://software.intel.com/en-us/articles/intel-tools-for-upnp-technologies] to get the GetprotocolInfo -->
+      <!--     then Notepad++ to replace (search tab > replace ticking extended mode): ",http-get:" with "</Source>\r\n         <Source>http-get:" to prepare the data -->
+      <ProtocolInfo> 
+         <Source>http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_SM</Source> 
+         <Source>http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_MED</Source> 
+         <Source>http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_LRG</Source> 
+         <Source>http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_TN</Source> 
+         <Source>http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_SM_ICO</Source> 
+         <Source>http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_LRG_ICO</Source> 
+         <Source>http-get:*:image/png:DLNA.ORG_PN=PNG_TN</Source> 
+         <Source>http-get:*:image/png:DLNA.ORG_PN=PNG_SM_ICO</Source> 
+         <Source>http-get:*:image/png:DLNA.ORG_PN=PNG_LRG_ICO</Source> 
+         <Source>http-get:*:image/jpeg:*</Source> 
+         <Source>http-get:*:image/png:*</Source> 
+         <Source>http-get:*:image/bmp:*</Source> 
+         <Source>http-get:*:audio/3gpp:DLNA.ORG_PN=AMR_WBplus;DLNA.ORG_FLAGS=8D100000000000000000000000000000</Source> 
+         <Source>http-get:*:audio/L16:DLNA.ORG_PN=LPCM;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source> 
+         <Source>http-get:*:audio/mp4:DLNA.ORG_PN=AMR_3GPP;DLNA.ORG_FLAGS=8D100000000000000000000000000000</Source> 
+         <Source>http-get:*:audio/mp4:DLNA.ORG_PN=AAC_ISO;DLNA.ORG_FLAGS=8D100000000000000000000000000000</Source> 
+         <Source>http-get:*:audio/mp4:DLNA.ORG_PN=AAC_ISO_320;DLNA.ORG_FLAGS=8D100000000000000000000000000000</Source> 
+         <Source>http-get:*:audio/mp4:DLNA.ORG_PN=AAC_LTP_ISO;DLNA.ORG_FLAGS=8D100000000000000000000000000000</Source> 
+         <Source>http-get:*:audio/mp4:DLNA.ORG_PN=AAC_LTP_MULT5_ISO;DLNA.ORG_FLAGS=8D100000000000000000000000000000</Source>
+         <Source>http-get:*:audio/mp4:DLNA.ORG_PN=AAC_LTP_MULT7_ISO;DLNA.ORG_FLAGS=8D100000000000000000000000000000</Source>
+         <Source>http-get:*:audio/mp4:DLNA.ORG_PN=AAC_MULT5_ISO;DLNA.ORG_FLAGS=8D100000000000000000000000000000</Source>
+         <Source>http-get:*:audio/mp4:DLNA.ORG_PN=HEAAC_L2_ISO;DLNA.ORG_FLAGS=8D100000000000000000000000000000</Source> 
+         <Source>http-get:*:audio/mp4:DLNA.ORG_PN=HEAAC_L2_ISO_320;DLNA.ORG_FLAGS=8D100000000000000000000000000000</Source>
+         <Source>http-get:*:audio/mp4:DLNA.ORG_PN=HEAAC_L3_ISO;DLNA.ORG_FLAGS=8D100000000000000000000000000000</Source> 
+         <Source>http-get:*:audio/mp4:DLNA.ORG_PN=HEAAC_MULT5_ISO;DLNA.ORG_FLAGS=8D100000000000000000000000000000</Source>
+         <Source>http-get:*:audio/mp4:DLNA.ORG_PN=BSAC_ISO;DLNA.ORG_FLAGS=8D100000000000000000000000000000</Source> 
+         <Source>http-get:*:audio/mp4:DLNA.ORG_PN=BSAC_MULT5_ISO;DLNA.ORG_FLAGS=8D100000000000000000000000000000</Source>
+         <Source>http-get:*:audio/mp4:*</Source> 
+         <Source>http-get:*:audio/mpeg:DLNA.ORG_PN=MP3;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source> 
+         <Source>http-get:*:audio/mpeg:DLNA.ORG_PN=MP3X;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source> 
+         <Source>http-get:*:audio/mpeg:*</Source> 
+         <Source>http-get:*:audio/vnd.dlna.adts:DLNA.ORG_PN=AAC_ADTS;DLNA.ORG_FLAGS=8D100000000000000000000000000000</Source>
+         <Source>http-get:*:audio/vnd.dlna.adts:DLNA.ORG_PN=AAC_ADTS_320;DLNA.ORG_FLAGS=8D100000000000000000000000000000</Source>
+         <Source>http-get:*:audio/vnd.dlna.adts:DLNA.ORG_PN=AAC_MULT5_ADTS;DLNA.ORG_FLAGS=8D100000000000000000000000000000</Source>
+         <Source>http-get:*:audio/vnd.dlna.adts:DLNA.ORG_PN=HEAAC_L2_ADTS;DLNA.ORG_FLAGS=8D100000000000000000000000000000</Source>
+         <Source>http-get:*:audio/vnd.dlna.adts:DLNA.ORG_PN=HEAAC_L2_ADTS_320;DLNA.ORG_FLAGS=8D100000000000000000000000000000</Source>
+         <Source>http-get:*:audio/vnd.dlna.adts:DLNA.ORG_PN=HEAAC_L3_ADTS;DLNA.ORG_FLAGS=8D100000000000000000000000000000</Source>
+         <Source>http-get:*:audio/vnd.dolby.dd-raw:DLNA.ORG_PN=AC3;DLNA.ORG_FLAGS=8D100000000000000000000000000000</Source>
+         <Source>http-get:*:audio/x-ms-wma:DLNA.ORG_PN=WMABASE;DLNA.ORG_FLAGS=8D100000000000000000000000000000</Source> 
+         <Source>http-get:*:audio/x-ms-wma:DLNA.ORG_PN=WMAFULL;DLNA.ORG_FLAGS=8D100000000000000000000000000000</Source> 
+         <Source>http-get:*:audio/x-ms-wma:DLNA.ORG_PN=WMAPRO;DLNA.ORG_FLAGS=8D100000000000000000000000000000</Source>
+         <Source>http-get:*:audio/x-ms-wma:*</Source> 
+         <Source>http-get:*:audio/x-sony-oma:DLNA.ORG_PN=ATRAC3plus;DLNA.ORG_FLAGS=8D100000000000000000000000000000</Source>
+         <Source>http-get:*:audio/x-m4a:*</Source> 
+         <Source>http-get:*:audio/3ga:*</Source> 
+         <Source>http-get:*:audio/ogg:*</Source> 
+         <Source>http-get:*:audio/x-wav:*</Source> 
+         <Source>http-get:*:audio/x-flac:*</Source>  
+         <Source>http-get:*:video/3gpp:DLNA.ORG_PN=MPEG4_H263_MP4_P0_L10_AAC_LTP;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/3gpp:DLNA.ORG_PN=MPEG4_H263_3GPP_P0_L10_AMR_WBplus;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/3gpp:DLNA.ORG_PN=MPEG4_P2_3GPP_SP_L0B_AAC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/3gpp:DLNA.ORG_PN=MPEG4_P2_3GPP_SP_L0B_AMR;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/3gpp:DLNA.ORG_PN=MPEG4_H263_3GPP_P3_L10_AMR;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/3gpp:DLNA.ORG_PN=AVC_3GPP_BL_CIF30_AMR_WBplus;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/3gpp:DLNA.ORG_PN=AVC_3GPP_BL_CIF15_AMR_WBplus;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/3gpp:DLNA.ORG_PN=AVC_3GPP_BL_QCIF15_AAC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/3gpp:DLNA.ORG_PN=AVC_3GPP_BL_QCIF15_AAC_LTP;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/3gpp:DLNA.ORG_PN=AVC_3GPP_BL_QCIF15_HEAAC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/3gpp:DLNA.ORG_PN=AVC_3GPP_BL_QCIF15_AMR_WBplus;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/3gpp:DLNA.ORG_PN=AVC_3GPP_BL_QCIF15_AMR;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/3gpp:*</Source> 
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=MPEG4_P2_MP4_SP_AAC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=MPEG4_P2_MP4_SP_HEAAC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=MPEG4_P2_MP4_SP_ATRAC3plus;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=MPEG4_P2_MP4_SP_AAC_LTP;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=MPEG4_P2_MP4_SP_L2_AAC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=MPEG4_P2_MP4_SP_L2_AMR;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=MPEG4_P2_MP4_SP_VGA_AAC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=MPEG4_P2_MP4_SP_VGA_HEAAC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=MPEG4_P2_MP4_ASP_AAC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=MPEG4_P2_MP4_ASP_HEAAC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=MPEG4_P2_MP4_ASP_HEAAC_MULT5;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=MPEG4_P2_MP4_ASP_ATRAC3plus;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=MPEG4_P2_MP4_ASP_L5_SO_AAC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=MPEG4_P2_MP4_ASP_L5_SO_HEAAC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=MPEG4_P2_MP4_ASP_L5_SO_HEAAC_MULT5;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=MPEG4_P2_MP4_ASP_L4_SO_AAC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=MPEG4_P2_MP4_ASP_L4_SO_HEAAC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=MPEG4_P2_MP4_ASP_L4_SO_HEAAC_MULT5;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=AVC_MP4_MP_SD_AAC_MULT5;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=AVC_MP4_MP_SD_HEAAC_L2;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=AVC_MP4_MP_SD_MPEG1_L3;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=AVC_MP4_MP_SD_AC3;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=AVC_MP4_MP_SD_AAC_LTP;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=AVC_MP4_MP_SD_AAC_LTP_MULT5;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=AVC_MP4_MP_SD_AAC_LTP_MULT7;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=AVC_MP4_MP_SD_ATRAC3plus;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=AVC_MP4_BL_L3L_SD_AAC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=AVC_MP4_BL_L3L_SD_HEAAC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=AVC_MP4_BL_L3_SD_AAC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=AVC_MP4_MP_SD_BSAC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=AVC_MP4_BL_CIF30_AAC_MULT5;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=AVC_MP4_BL_CIF30_HEAAC_L2;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=AVC_MP4_BL_CIF30_MPEG1_L3;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=AVC_MP4_BL_CIF30_AC3;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=AVC_MP4_BL_CIF30_AAC_LTP;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=AVC_MP4_BL_CIF30_AAC_LTP_MULT5;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=AVC_MP4_BL_L2_CIF30_AAC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=AVC_MP4_BL_CIF30_BSAC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=AVC_MP4_BL_CIF30_BSAC_MULT5;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=AVC_MP4_BL_CIF30_AAC_940;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=AVC_MP4_BL_CIF15_HEAAC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=AVC_MP4_BL_CIF15_AMR;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=AVC_MP4_BL_CIF15_AAC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=AVC_MP4_BL_CIF15_AAC_520;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=AVC_MP4_BL_CIF15_AAC_LTP;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=AVC_MP4_BL_CIF15_AAC_LTP_520;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=AVC_MP4_BL_CIF15_BSAC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=AVC_MP4_BL_L12_CIF15_HEAAC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:DLNA.ORG_PN=AVC_MP4_BL_L1B_QCIF15_HEAAC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mp4:*</Source> 
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=MPEG1;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source> 
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_PS_NTSC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_PS_NTSC_XAC3;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_PS_PAL;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source> 
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_PS_PAL_XAC3;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_TS_SD_NA_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_TS_HD_NA_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_TS_SD_EU_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_TS_SD_KO_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_TS_HD_KO_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_TS_HD_KO_XAC3_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_TS_HD_NA_XAC3_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_TS_SD_KO_XAC3_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_TS_SD_NA_XAC3_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_TS_MP_LL_AAC_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_ES_PAL;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source> 
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_ES_NTSC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_ES_PAL_XAC3;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_ES_NTSC_XAC3;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=MPEG4_P2_TS_SP_AAC_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=MPEG4_P2_TS_SP_MPEG1_L3_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=MPEG4_P2_TS_SP_AC3_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=MPEG4_P2_TS_SP_MPEG2_L2_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=MPEG4_P2_TS_ASP_AAC_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=MPEG4_P2_TS_ASP_MPEG1_L3_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=MPEG4_P2_TS_ASP_AC3_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=AVC_TS_MP_SD_HEAAC_L2_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=AVC_TS_MP_SD_MPEG1_L3_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=AVC_TS_MP_SD_AC3_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=AVC_TS_MP_SD_AAC_LTP_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=AVC_TS_MP_SD_AAC_LTP_MULT5_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=AVC_TS_MP_SD_AAC_LTP_MULT7_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=AVC_TS_MP_SD_BSAC_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=AVC_TS_BL_CIF30_AAC_MULT5_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=AVC_TS_BL_CIF30_HEAAC_L2_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=AVC_TS_BL_CIF30_MPEG1_L3_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=AVC_TS_BL_CIF30_AC3_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=AVC_TS_BL_CIF30_AAC_LTP_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=AVC_TS_BL_CIF30_AAC_LTP_MULT5_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=AVC_TS_BL_CIF30_AAC_940_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=AVC_TS_MP_HD_AAC_MULT5_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=AVC_TS_MP_HD_HEAAC_L2_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=AVC_TS_MP_HD_MPEG1_L3_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=AVC_TS_MP_HD_AC3_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=AVC_TS_MP_HD_AAC_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=AVC_TS_MP_HD_AAC_LTP_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=AVC_TS_MP_HD_AAC_LTP_MULT5_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=AVC_TS_MP_HD_AAC_LTP_MULT7_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=AVC_TS_BL_CIF15_AAC_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=AVC_TS_BL_CIF15_AAC_540_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=AVC_TS_BL_CIF15_AAC_LTP_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=AVC_TS_BL_CIF15_BSAC_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:*</Source> 
+         <Source>http-get:*:video/x-ms-asf:DLNA.ORG_PN=MPEG4_P2_ASF_SP_G726;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/x-ms-asf:DLNA.ORG_PN=MPEG4_P2_ASF_ASP_L5_SO_G726;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/x-ms-asf:DLNA.ORG_PN=MPEG4_P2_ASF_ASP_L4_SO_G726;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/x-ms-asf:*</Source> 
+         <Source>http-get:*:video/x-ms-wmv:DLNA.ORG_PN=WMVMED_BASE;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/x-ms-wmv:DLNA.ORG_PN=WMVMED_FULL;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/x-ms-wmv:DLNA.ORG_PN=WMVMED_PRO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/x-ms-wmv:DLNA.ORG_PN=WMVHIGH_FULL;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/x-ms-wmv:DLNA.ORG_PN=WMVHIGH_PRO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/x-ms-wmv:DLNA.ORG_PN=WMVHM_BASE;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/x-ms-wmv:DLNA.ORG_PN=WMVSPLL_BASE;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/x-ms-wmv:DLNA.ORG_PN=WMVSPML_BASE;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/x-ms-wmv:DLNA.ORG_PN=WMVSPML_MP3;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/x-ms-wmv:*</Source> 
+         <Source>http-get:*:video/x-msvideo:*</Source> 
+         <Source>http-get:*:video/x-divx:*</Source> 
+         <Source>http-get:*:video/x-mkv:*</Source> 
+         <Source>http-get:*:video/x-avi:*</Source> 
+         <Source>http-get:*:video/x-flv:*</Source> 
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=MPEG4_P2_TS_CO_AC3_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=MPEG4_P2_TS_CO_MPEG2_L2_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/mpeg:DLNA.ORG_PN=AVC_TS_MP_SD_AAC_MULT5_ISO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_MP_SD_AAC_MULT5;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_MP_SD_AAC_MULT5_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_MP_SD_HEAAC_L2;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_MP_SD_HEAAC_L2_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_MP_SD_MPEG1_L3;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_MP_SD_MPEG1_L3_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_MP_SD_AC3;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_MP_SD_AC3_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_MP_SD_AAC_LTP;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_MP_SD_AAC_LTP_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_MP_SD_AAC_LTP_MULT5;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_MP_SD_AAC_LTP_MULT5_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_MP_SD_AAC_LTP_MULT7;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_MP_SD_AAC_LTP_MULT7_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_MP_SD_BSAC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_MP_SD_BSAC_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_BL_CIF30_AAC_MULT5;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_BL_CIF30_AAC_MULT5_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_BL_CIF30_HEAAC_L2;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_BL_CIF30_HEAAC_L2_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_BL_CIF30_MPEG1_L3;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_BL_CIF30_MPEG1_L3_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_BL_CIF30_AC3;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_BL_CIF30_AC3_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_BL_CIF30_AAC_LTP;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_BL_CIF30_AAC_LTP_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_BL_CIF30_AAC_LTP_MULT5;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_BL_CIF30_AAC_LTP_MULT5_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_BL_CIF30_AAC_940;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_BL_CIF30_AAC_940_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_MP_HD_AAC_MULT5;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_MP_HD_AAC_MULT5_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_MP_HD_HEAAC_L2;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_MP_HD_HEAAC_L2_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_MP_HD_MPEG1_L3;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_MP_HD_MPEG1_L3_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_MP_HD_AC3;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_MP_HD_AC3_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_MP_HD_AAC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_MP_HD_AAC_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_MP_HD_AAC_LTP;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_MP_HD_AAC_LTP_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_MP_HD_AAC_LTP_MULT5;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_MP_HD_AAC_LTP_MULT5_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_MP_HD_AAC_LTP_MULT7;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_MP_HD_AAC_LTP_MULT7_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_BL_CIF15_AAC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_BL_CIF15_AAC_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_BL_CIF15_AAC_540;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_BL_CIF15_AAC_540_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_BL_CIF15_AAC_LTP;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_BL_CIF15_AAC_LTP_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_BL_CIF15_BSAC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_BL_CIF15_BSAC_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_HD_60_AC3;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG_TS_JP_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_HD_60_AC3_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG_TS_SD_NA;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG_TS_SD_NA_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG_TS_HD_NA;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG_TS_HD_NA_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG_TS_SD_EU;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG_TS_SD_EU_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG_TS_SD_KO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG_TS_SD_KO_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG_TS_HD_KO;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG_TS_HD_KO_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG_TS_HD_KO_XAC3;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG_TS_HD_KO_XAC3_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG_TS_HD_NA_XAC3;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG_TS_HD_NA_XAC3_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG_TS_SD_KO_XAC3;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG_TS_SD_KO_XAC3_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG_TS_SD_NA_XAC3;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG_TS_SD_NA_XAC3_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG_TS_MP_LL_AAC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG_TS_MP_LL_AAC_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG4_P2_TS_SP_AAC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG4_P2_TS_SP_AAC_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG4_P2_TS_SP_MPEG1_L3;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG4_P2_TS_SP_MPEG1_L3_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG4_P2_TS_SP_AC3;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG4_P2_TS_SP_AC3_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG4_P2_TS_SP_MPEG2_L2;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG4_P2_TS_SP_MPEG2_L2_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG4_P2_TS_ASP_AAC;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG4_P2_TS_ASP_AAC_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG4_P2_TS_ASP_MPEG1_L3;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG4_P2_TS_ASP_MPEG1_L3_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG4_P2_TS_ASP_AC3;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG4_P2_TS_ASP_AC3_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG4_P2_TS_CO_AC3;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG4_P2_TS_CO_AC3_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG4_P2_TS_CO_MPEG2_L2;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG4_P2_TS_CO_MPEG2_L2_T;DLNA.ORG_FLAGS=ED100000000000000000000000000000</Source>
+         <Source>http-get:*:video/avi:*</Source> 
+         <Source>http-get:*:video/webm:*</Source> 
+         <Source>http-get:*:text/xml:SEC.COM_DIDLSIMAGE=1;SEC.COM_DIDLSAUDIO=1;SEC.COM_DIDLSVIDEO=1</Source> 
+         <Source>http-get:*:smi/caption:*</Source>
+      </ProtocolInfo> 
+
+      <!-- 5. Settings: configuration options that change the DLNA server's behavior when talking to a particular device. -->
+      <Settings> 
+              <Setting name="EmitAlbumArtResources" value="false"/> <!—Crash if enabled -->
+              <Setting name="AlbumArtPN" value="JPEG_TN" />  
+          </Settings> 
+
+      <!-- 6. Transcode Targets: the video, music and photo media formats to which PMS will transcode content devices can't play natively. -->
+      <TranscodeTargets> 
+        <VideoProfile container="mpegps" codec="h264" audioCodec="ac3"/> 
+             <MusicProfile container="mp3" codec="mp3"/> 
+             <PhotoProfile container="jpeg"/> 
+      </TranscodeTargets> 
+
+      <!-- 7. DirectPlay Profiles: the set of video, music and photo formats the device can play natively. --> 
+      <DirectPlayProfiles> 
+        <VideoProfile container="asf" codec="wmv2,wmv3" audioCodec="wmav2,wmavoice,wmapro"/> 
+             <VideoProfile container="avi" codec="h264,mpeg4,mjpeg,msmpeg4,div3,diuv4,divx,dx50" audioCodec="aac,mp3,ac3"/>
+        <VideoProfile container="mov" codec="h264,mpeg4,msmpeg4" audioCodec="mp3"/> 
+        <VideoProfile container="mp4" codec="h264,vc1,msmpeg4" audioCodec="ac3"/> 
+        <VideoProfile container="mkv" codec="h264,vc1,mpeg4,mjpeg,msmpeg4" audioCodec="mp3,ac3,aac"/> 
+        <VideoProfile container="mpegts" codec="mpeg2video,h264,vc1,msmpeg4" audioCodec="ac3,mp3,eac3,aac,mp2,pcm "/> 
+        <VideoProfile container="mpg,mpeg" codec="mpeg1video,mpeg2video,h264" audioCodec="ac3,mp2,mp3"/> 
+        <VideoProfile container="m4v" codec="mpeg1video,mpeg2video" audioCodec="ac3,mp2,mp3"/> 
+        <VideoProfile container="vro,vob" codec="mpeg1video,mpeg2video" audioCodec="ac3,mp2,mp3"/>              
+        <VideoProfile container="flv,f4v,f4p,f4a,f4b" codec="h264,vc1,msmpeg4" audioCodec="aac,ac3,mp3"/>       
+             <VideoProfile container="webm" codec="vp8" audioCodec="vorbis"/>           
+             <!-- Added bmp and audio formats from ProtocolInfo --> 
+             <VideoProfile container="3gp" codec=" 3gpp" audioCodec="amr" /> 
+        <PhotoProfile container="jpeg,png,bmp"/> 
+             <MusicProfile container="mp3" codec="mp3" /> 
+             <MusicProfile container="ogg" codec="vorbis" /> 
+             <MusicProfile container="mp4" codec="aac" /> 
+             <MusicProfile container="flac" codec="flac" /> 
+             <MusicProfile container="wma" codec="wmav2" /> 
+             <MusicProfile container="wav" codec="wav,flac,pcm" /> 
+      </DirectPlayProfiles> 
+
+      <!-- 8. Codec Profiles: settings and limitations on the video, music and photo formats that the device can play natively. -->
+      <CodecProfiles> 
+         <VideoCodec name="mpeg2video"> 
+            <Limitations> 
+                  <UpperBound name="video.width" value="1920"/> 
+                  <UpperBound name="video.height" value="1080"/> 
+            </Limitations> 
+         </VideoCodec> 
+         <VideoCodec name="mpeg4"> 
+            <Limitations> 
+               <UpperBound name="video.width" value="1920"/> 
+                  <UpperBound name="video.height" value="1080"/> 
+            </Limitations> 
+         </VideoCodec> 
+         <VideoCodec name="h264"> 
+            <Limitations> 
+               <UpperBound name="video.width" value="1920"/> 
+               <UpperBound name="video.height" value="1080"/> 
+            </Limitations> 
+         </VideoCodec> 
+         <VideoCodec name="wmv2,wmv3,vc1"> 
+            <Limitations> 
+               <UpperBound name="video.width" value="1920"/> 
+               <UpperBound name="video.height" value="1080"/> 
+            </Limitations> 
+         </VideoCodec> 
+         <VideoAudioCodec name="ac3,wmav2,dca,aac,mp3"> 
+            <Limitations> 
+               <UpperBound name="audio.channels" value="6"/> 
+            </Limitations> 
+         </VideoAudioCodec> 
+      </CodecProfiles> 
+
+      <!-- 9. Container Profiles: settings and limitations on the container formats that the device can play natively. -->
+      <ContainerProfiles> 
+      </ContainerProfiles> 
+
+      <!-- 10. Transcode Target Profiles: settings for transcode targets. --> 
+      <TranscodeTargetProfiles> 
+     </TranscodeTargetProfiles> 
+
+      <!-- 11. DLNA Media Profiles: customization of media format representations for very picky DLNA devices. --> 
+      <DlnaMediaProfiles> 
+         <DlnaPhotoProfile extension="jpg" mimetype="image/jpeg" container="jpeg" codec="jpeg" pn="JPEG_SM,JPEG_MED,JPEG_LRG,JPEG_TN,JPEG_SM_ICO,JPEG_LRG_ICO" />
+         <DlnaPhotoProfile extension="png" mimetype="image/png"  container="png"  codec="png"  pn="PNG_TN,PNG_SM_ICO,PNG_LRG_ICO" />
+
+         <DlnaMusicProfile extension="wav"         mimeType="audio/wav"              container="wav" /> 
+         <DlnaMusicProfile extension="3gp"         mimeType="audio/3gpp"             container="3gp"  audioCodec="amr"                  pn="AMR_WBplus" /> 
+         <DlnaMusicProfile extension="mp4"         mimeType="audio/mp4"              container="mpeg" audioCodec="aac"                  pn="AMR_3GPP,AAC_ISO,AAC_ISO_320,AAC_LTP_ISO,AAC_LTP_MULT5_ISO,AAC_LTP_MULT7_ISO,AAC_MULT5_ISO,HEAAC_L2_ISO,HEAAC_L2_ISO_320,HEAAC_L3_ISO,HEAAC_MULT5_ISO,BSAC_ISO,BSAC_MULT5_ISO" /> 
+         <DlnaMusicProfile extension="mp3"         mimeType="audio/mpeg"             container="mp3"  audioCodec="mp3"                  pn="MP3,MP3X" /> 
+         <DlnaMusicProfile extension="adt"         mimeType="audio/vnd.dlna.adts"    container="mpeg" audioCodec="aac"                  pn="AAC_ADTS,AAC_ADTS_320,AAC_MULT5_ADTS,HEAAC_L2_ADTS,HEAAC_L2_ADTS_320,HEAAC_L3_ADTS" /> 
+         <DlnaMusicProfile extension="adt"         mimeType="audio/vnd.dolby.dd-raw" container="mpeg" audioCodec="ac3"                  pn="AC3" /> 
+         <DlnaMusicProfile extension="wma,asf"     mimeType="audio/x-ms-wma"         container="wma" audioCodec="wmav2,wmavoice,wmapro" pn="WMABASE,WMAFULL,WMAPRO" /> 
+         <DlnaMusicProfile extension="oma,aa3,at3" mimeType="audio/x-sony-oma"                       audioCodec="ATRAC3plus"            pn="ATRAC3plus" /> 
+         
+         <DlnaVideoProfile extension="3gp"         mimeType="video/3gpp" container="3gpp"   codec="mpeg,3gpp"        audioCodec="3gpp"   pn="MPEG4_H263_MP4_P0_L10_AAC_LTP,MPEG4_H263_3GPP_P0_L10_AMR_WBplus,MPEG4_P2_3GPP_SP_L0B_AAC,MPEG4_P2_3GPP_SP_L0B_AMR,MPEG4_H263_3GPP_P3_L10_AMR,AVC_3GPP_BL_CIF30_AMR_WBplus,AVC_3GPP_BL_CIF15_AMR_WBplus,AVC_3GPP_BL_QCIF15_AAC,AVC_3GPP_BL_QCIF15_AAC_LTP,AVC_3GPP_BL_QCIF15_HEAAC,AVC_3GPP_BL_QCIF15_AMR_WBplus,AVC_3GPP_BL_QCIF15_AMR" /> 
+         <DlnaVideoProfile extension="mp4"         mimeType="video/mp4"  container="mp4"    codec="h264,vc1,msmpeg4" audioCodec="ac3"    pn="MPEG4_P2_MP4_SP_AAC,MPEG4_P2_MP4_SP_HEAAC,MPEG4_P2_MP4_SP_ATRAC3plus,MPEG4_P2_MP4_SP_AAC_LTP,MPEG4_P2_MP4_SP_L2_AMR,MPEG4_P2_MP4_SP_VGA_AAC,MPEG4_P2_MP4_SP_VGA_HEAAC,MPEG4_P2_MP4_ASP_AAC,MPEG4_P2_MP4_ASP_HEAAC,MPEG4_P2_MP4_ASP_HEAAC_MULT5,MPEG4_P2_MP4_ASP_ATRAC3plus,MPEG4_P2_MP4_ASP_L5_SO_AAC,MPEG4_P2_MP4_ASP_L5_SO_HEAAC,MPEG4_P2_MP4_ASP_L5_SO_HEAAC_MULT5,MPEG4_P2_MP4_ASP_L4_SO_AAC,MPEG4_P2_MP4_ASP_L4_SO_HEAAC,MPEG4_P2_MP4_ASP_L4_SO_HEAAC_MULT5,AVC_MP4_MP_SD_AAC_MULT5,AVC_MP4_MP_SD_HEAAC_L2,AVC_MP4_MP_SD_MPEG1_L3,AVC_MP4_MP_SD_AC3,AVC_MP4_MP_SD_AAC_LTP,AVC_MP4_MP_SD_AAC_LTP_MULT5,AVC_MP4_MP_SD_AAC_LTP_MULT7,AVC_MP4_MP_SD_ATRAC3plus,AVC_MP4_BL_L3L_SD_AAC,AVC_MP4_BL_L3L_SD_HEAAC,AVC_MP4_BL_L3_SD_AAC,AVC_MP4_MP_SD_BSAC,AVC_MP4_BL_CIF30_AAC_MULT5,AVC_MP4_BL_CIF30_HEAAC_L2,AVC_MP4_BL_CIF30_MPEG1_L3,AVC_MP4_BL_CIF30_AC3,AVC_MP4_BL_CIF30_AAC_LTP,AVC_MP4_BL_CIF30_AAC_LTP_MULT5,AVC_MP4_BL_L2_CIF30_AAC,AVC_MP4_BL_CIF30_BSAC,AVC_MP4_BL_CIF30_BSAC_MULT5,AVC_MP4_BL_CIF30_AAC_940,AVC_MP4_BL_CIF15_HEAAC,AVC_MP4_BL_CIF15_AMR,AVC_MP4_BL_CIF15_AAC,AVC_MP4_BL_CIF15_AAC_520,AVC_MP4_BL_CIF15_AAC_LTP,AVC_MP4_BL_CIF15_AAC_LTP_520,AVC_MP4_BL_CIF15_BSAC,AVC_MP4_BL_L12_CIF15_HEAAC,AVC_MP4_BL_L1B_QCIF15_HEAAC">
+         <DlnaVideoProfile extension="webm"        mimeType="video/mpeg" container="webm"   codec="vp8"              audioCodec="vorbis" /> 
+         <DlnaVideoProfile container="avi"         mimeType="video/mpeg" /> 
+         <DlnaVideoProfile container="mkv"         mimeType="video/vnd.dlna.mpeg-tts" />
+         <DlnaVideoProfile container="mov"         mimeType="video/mp4" /> 
+         <DlnaVideoProfile container="mpegts"      mimeType="video/vnd.dlna.mpeg-tts" /> 
+         <DlnaVideoProfile container="mpeg"        mimeType="video/mpeg" /> 
+         <DlnaVideoProfile container="mpegts"      codec="h264" audioCodec="ac3,aac,mp3" pn="AVC_TS_HD_24_AC3_ISO,AVC_TS_HD_50_AC3_ISO,AVC_TS_HD_60_AC3_ISO,AVC_TS_HD_EU_ISO" mimeType="video/mpeg" />
+         <DlnaVideoProfile container="mpeg"        codec="mpeg1video,mpeg2video" pn="MPEG_PS_NTSC,MPEG_PS_PAL" mimeType="video/mpeg" />
+         <DlnaVideoProfile container="mpegts"      codec="h264" audioCodec="ac3,aac,mp3" pn="AVC_TS_HD_24_AC3_T,AVC_TS_HD_50_AC3_T,AVC_TS_HD_60_AC3_T,AVC_TS_HD_EU_T" mimeType="video/vnd.dlna.mpeg-tts">
+      </DlnaMediaProfiles> 
+   </Client> 
+</Clients>
